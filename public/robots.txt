@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: 
+Sitemap: https://hungry-chef-shandiya.netlify.app/sitemap.xml
