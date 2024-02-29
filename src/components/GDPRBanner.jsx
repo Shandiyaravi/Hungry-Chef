@@ -1,9 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from '../hooks/themeContext';
 
 const GDPRBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { bgColorClass } = useContext(ThemeContext);
 
   useEffect(() => {
     const cookiesEnabled = localStorage.getItem('cookiesEnabled');
@@ -28,7 +26,6 @@ const GDPRBanner = () => {
 
   return (
     <div
-      className={bgColorClass}
       style={{
         position: 'fixed',
         bottom: 0,
