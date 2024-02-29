@@ -7,7 +7,9 @@ const HomePage = () => {
     <div>
       <MetaTags
         title='Home - Hungry Chef'
-        description='Explore a world of flavors with Hungry Chef! Find easy-to-follow recipes from around the globe, perfect for every occasion and skill level. Start your culinary adventure today.'
+        description='Explore a world of flavors with Hungry Chef! 
+        Find easy-to-follow recipes from around the globe, perfect for every occasion and skill level. 
+        Start your culinary adventure today.'
       />
 
       <section id='top' className={`container col-xxl-16 px-4`}>
@@ -19,6 +21,7 @@ const HomePage = () => {
               alt='Welcome to Hungry Chef - Delicious Food'
               width={700}
               height={500}
+              loading='lazy'
             />
           </div>
           <div className='col-lg-6'>
@@ -31,7 +34,11 @@ const HomePage = () => {
               the kitchen, our app is your go-to resource for satisfying your
               culinary cravings.
             </p>
-            <a href='#recipe' className=' px-4 me-md-2' aria-label='Check out our new recipes'>
+            <a
+              href='#recipe'
+              className=' px-4 me-md-2'
+              aria-label='Check out our new recipes'
+            >
               Check out our new recipes!
             </a>
           </div>
