@@ -1,20 +1,44 @@
 
+/* Header.css */
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  background-color: #343a40; 
+  color: #ffffff;
+}
+
+.brand-logo {
+  color: #ffffff; 
+}
+
+.navbar-toggler-icon {
+  border-color: #ffffff; 
+}
+
+.nav-link,
+.nav-link button {
+  color: #ffffff; 
+}
+
+.nav-link button:hover,
+.btn-info {
+  background-color: #17a2b8; 
+}
+
+.form-control {
+  background-color: #555d66; 
+  color: #ffffff; 
+}
+
+.form-control:focus {
+  background-color: #555d66; 
+  color: #ffffff; 
+  border-color: #17a2b8; 
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Customize the mobile menu background color */
   }
-  
-  .navbar {
-    background-color: #fff2d5;
-  }
-  
-  .brand-logo {
-    color: #4c723b;
-  }
-  
- 
+}
+
   

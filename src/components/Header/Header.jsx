@@ -1,3 +1,5 @@
+// Header.jsx
+
 import React, { useContext, useState } from 'react';
 import { BsBrightnessHigh, BsFillMoonFill } from 'react-icons/bs';
 import { ThemeContext } from '../../hooks/themeContext';
@@ -7,7 +9,7 @@ import { foodContext } from '../../hooks/foodContext';
 import './Header.css';
 
 const Header = () => {
-  const { darkMode, handleToggle, bgColorclassName } = useContext(ThemeContext);
+  const { darkMode, handleToggle } = useContext(ThemeContext);
   const { setSearchInput } = useContext(foodContext);
   const [foodSearch, setFoodSearch] = useState('');
   const { toggleSubscribe } = useContext(subscribeContext);
@@ -29,11 +31,11 @@ const Header = () => {
   };
 
   return (
-    <header className={`mb-4 header ${bgColorclassName}`}>
-      <nav className={`navbar navbar-expand-lg`}>
-        <div className='container-fluid d-flex justify-content-between'>
+    <header className='mb-4 header'>
+      <nav className='navbar navbar-expand-lg'>
+        <div className='container-fluid d-flex justify-content-between align-items-center'>
           <NavLink className='navbar-brand' to='/' aria-label='Go to Home'>
-            <h1 className={`display-5 lh-1 mb-3 brand-logo`}>Hungry Chef</h1>
+            <h1 className='display-5 lh-1 mb-3 brand-logo'>Hungry Chef</h1>
           </NavLink>
           <button
             className='navbar-toggler custom-toggler'

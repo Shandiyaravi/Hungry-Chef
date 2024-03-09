@@ -4,7 +4,7 @@ import { foodContext } from '../hooks/foodContext';
 import MetaTags from '../components/MetaTags';
 
 const RecipePage = () => {
-  const { id } = useParams();
+  const { id, name } = useParams();
   const { getFoodById } = useContext(foodContext);
   const selectedRecipe = getFoodById(id);
 
@@ -50,7 +50,7 @@ const RecipePage = () => {
   }
 
   return (
-    <div className='d-flex justify-content-center py-5 mt-5' role='main'>
+    <div className='d-flex justify-content-center py-5 mt-5'>
       <MetaTags title={pageTitle} description={pageDescription} />
       <div className='card mb-3' style={{ maxWidth: '840px', width: '100%' }}>
         <div className='row g-0'>
@@ -91,7 +91,6 @@ const RecipePage = () => {
                     href={strYoutube}
                     target='_blank'
                     rel='noopener noreferrer'
-                    aria-label={`Watch ${strMeal} recipe on YouTube`}
                   >
                     Watch on YouTube
                   </a>
