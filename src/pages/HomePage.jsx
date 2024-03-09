@@ -13,7 +13,7 @@ const HomePage = () => {
         />
       </header>
 
-      <main className={`container col-xxl-16 px-4`}>
+      <main className='container col-xxl-16 px-4'>
         <section
           id='top'
           className='row flex-lg-row justify-content-evenly align-items-center g-5 py-5 mt-1'
@@ -40,7 +40,7 @@ const HomePage = () => {
             </p>
             <a
               href='#recipe'
-              className='px-4 me-md-2'
+              className='px-4 me-md-2 text-info'
               aria-label='Check out our new recipes'
             >
               Check out our new recipes!
