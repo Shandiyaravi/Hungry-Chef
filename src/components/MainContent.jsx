@@ -31,7 +31,7 @@ const MainContent = () => {
       />
 
       <section className='container d-flex justify-content-center'>
-        <div id='carouselMeals' className='carousel slide ' data-bs-ride='true'>
+        <div id='carouselMeals' className='carousel slide' data-bs-ride='true'>
           <div className='carousel-indicators'>
             {food.slice(0, 3).map((_, index) => (
               <button
@@ -66,7 +66,7 @@ const MainContent = () => {
                     className='ms-5 d-none d-lg-block'
                     style={{ width: '50%' }}
                   >
-                    <h1 className='display-4 '>{item.strMeal}</h1>
+                    <h1 className='display-4'>{item.strMeal}</h1>
                     <p className='text-muted' style={{ fontSize: '1.5rem' }}>
                       <strong>Feast on the Flavors:</strong> Dive into the heart
                       of {item.strCategory} cuisine, a culinary journey that

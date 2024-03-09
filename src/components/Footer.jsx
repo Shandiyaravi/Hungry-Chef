@@ -1,10 +1,11 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+// Footer.jsx
 
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ThemeContext } from '../hooks/themeContext';
 
 const Footer = () => {
-  let { bgColorClass } = useContext(ThemeContext);
+  const { bgColorClass } = useContext(ThemeContext);
 
   return (
     <footer className={bgColorClass}>
@@ -32,8 +33,9 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
           <div className='col mb-3'>
-            <h2 className='text-muted'>About </h2>
+            <h2 className='text-muted'>About</h2>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <Link
@@ -58,6 +60,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
           <div className='col mb-3'>
             <h2 className='text-muted'>Share Us</h2>
             <ul className='nav flex-column'>
@@ -101,15 +104,26 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
           <div className='col mb-3'>
             <h2 className='text-muted'>Contact Information</h2>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2 text-body-secondary'>
-                Virkesvägen 2, 12030, Stockholm Fed25Team6@hyperisland.se
+                <address>
+                  Virkesvägen 2, 12030, Stockholm <br />
+                  <a
+                    href='mailto:Fed25Team6@hyperisland.se'
+                    className='nav-link p-0 text-body-secondary'
+                  >
+                    Fed25Team6@hyperisland.se
+                  </a>
+                </address>
               </li>
             </ul>
           </div>
+
           <hr style={{ width: '100%', borderColor: '#666666' }} />
+
           <div className='d-flex justify-content-between w-100'>
             <div className='col'>
               <p className='text-body-secondary' style={{ fontSize: 'larger' }}>

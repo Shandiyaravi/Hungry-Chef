@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ const CardItem = () => {
 
   return (
     <div className='m-80 py-5 mt-5'>
-      <div className='card-container justify-content-center d-flex flex-wrap '>
+      <div className='card-container justify-content-center d-flex flex-wrap'>
         {food.map((item) => (
           <Link
             to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
@@ -42,12 +42,12 @@ const CardItem = () => {
                 loading='lazy'
               />
               <div className='card-body'>
-                <h5
+                <span
                   className='card-title'
                   aria-label={`Title: ${item.strMeal}`}
                 >
                   {item.strMeal}
-                </h5>
+                </span>
               </div>
             </div>
           </Link>

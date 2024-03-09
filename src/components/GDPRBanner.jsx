@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../hooks/themeContext';
 
 const GDPRBanner = () => {
@@ -28,6 +28,9 @@ const GDPRBanner = () => {
 
   return (
     <div
+      role='dialog'
+      aria-labelledby='gdpr-banner-title'
+      aria-describedby='gdpr-banner-description'
       className={bgColorClass}
       style={{
         position: 'fixed',
@@ -40,7 +43,10 @@ const GDPRBanner = () => {
         zIndex: 1000,
       }}
     >
-      <p className='text-muted'>
+      <h2 id='gdpr-banner-title' className='text-muted'>
+        Cookie Consent
+      </h2>
+      <p id='gdpr-banner-description' className='text-muted'>
         Your privacy matters to us. We use cookies to personalize content and
         analyze our traffic. By clicking &quot;Accept,&quot; you consent to the
         use of cookies for these purposes. You can learn more about it by
@@ -54,12 +60,22 @@ const GDPRBanner = () => {
         </a>{' '}
         page.
       </p>
-      <button onClick={handleAccept} className='btn btn-info me-2'>
-        Accept
-      </button>
-      <button onClick={handleReject} className='btn btn-dark'>
-        Reject
-      </button>
+      <div role='group' aria-labelledby='gdpr-button-group-label'>
+        <button
+          onClick={handleAccept}
+          className='btn btn-info me-2'
+          aria-label='Accept Cookies'
+        >
+          Accept
+        </button>
+        <button
+          onClick={handleReject}
+          className='btn btn-dark'
+          aria-label='Reject Cookies'
+        >
+          Reject
+        </button>
+      </div>
     </div>
   );
 };

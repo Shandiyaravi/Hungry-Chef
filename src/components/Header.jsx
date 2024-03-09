@@ -1,13 +1,12 @@
+import React, { useContext, useState } from 'react';
 import { BsBrightnessHigh, BsFillMoonFill } from 'react-icons/bs';
 import { ThemeContext } from '../hooks/themeContext';
-import { useContext, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { subscribeContext } from '../hooks/subscribeContext';
-import { Link, useNavigate } from 'react-router-dom';
 import { foodContext } from '../hooks/foodContext';
 
 const Header = () => {
   const { darkMode, handleToggle, bgColorclassName } = useContext(ThemeContext);
-
   const { setSearchInput } = useContext(foodContext);
   const [foodSearch, setFoodSearch] = useState('');
   const { toggleSubscribe } = useContext(subscribeContext);
@@ -27,29 +26,6 @@ const Header = () => {
     e.preventDefault();
     toggleSubscribe();
   };
-  // const [dynamicStyle, setDynamicStyle] = useState({});
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 768) {
-  //       setDynamicStyle({
-  //         marginLeft: '0px',
-  //         marginTop: '0px',
-  //       });
-  //     } else {
-  //       setDynamicStyle({
-  //         marginLeft: '50px',
-  //         marginTop: '100px',
-  //       });
-  //     }
-  //   };
-
-  //   window.addEventListener('resize', handleResize);
-
-  //   handleResize();
-
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
 
   return (
     <header className={`mb-4 fixed-top ${bgColorclassName}`}>
@@ -58,11 +34,11 @@ const Header = () => {
         style={{ width: '100%', backgroundColor: '#fff2d5' }}
       >
         <div className='container-fluid d-flex justify-content-between'>
-          <Link className='navbar-brand ' to='/'>
-            <h1 className='display-5  lh-1 mb-3' style={{ color: '#4c723b' }}>
+          <NavLink className='navbar-brand' to='/' aria-label='Go to Home'>
+            <h1 className='display-5 lh-1 mb-3' style={{ color: '#4c723b' }}>
               Hungry Chef
             </h1>
-          </Link>
+          </NavLink>
           <div>
             <button
               className='navbar-toggler'
@@ -80,27 +56,40 @@ const Header = () => {
                 className='collapse navbar-collapse'
                 id='navbarSupportedContent'
               >
-                <ul className='navbar-nav '>
+                <ul className='navbar-nav'>
                   <li>
-                    <Link to='/' className='nav-link '>
-                      <button className='btn  btn-dark'>Home</button>
-                    </Link>
+                    <NavLink
+                      to='/'
+                      className='nav-link'
+                      aria-label='Go to Home'
+                    >
+                      <button className='btn btn-dark'>Home</button>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to='/recipe-index' className='nav-link'>
-                      <button className='btn  btn-dark'>Recipes</button>
-                    </Link>
+                    <NavLink
+                      to='/recipe-index'
+                      className='nav-link'
+                      aria-label='Go to Recipes'
+                    >
+                      <button className='btn btn-dark'>Recipes</button>
+                    </NavLink>
                   </li>
                 </ul>
                 <button
                   onClick={handleSubscribe}
-                  className=' btn  btn-info me-2 '
+                  className='btn btn-info me-2'
                   type='submit'
+                  aria-label='Subscribe to Newsletter'
                 >
                   subscribe
                 </button>
-
-                <form className='d-flex align-items-center' role='search'>
+                <form
+                  className='d-flex align-items-center'
+                  role='search'
+                  onSubmit={handleSearch}
+                  aria-label='Search for Recipes'
+                >
                   <input
                     className='form-control me-2'
                     type='search'
@@ -111,23 +100,22 @@ const Header = () => {
                     autoComplete='off'
                     style={{ maxWidth: '120px' }}
                   />
-                  <button
-                    onClick={handleSearch}
-                    className='btn  btn-dark'
-                    type='submit'
-                  >
+                  <button className='btn btn-dark' type='submit'>
                     Search
                   </button>
                 </form>
-
                 <div className='d-block px-3'>
                   {darkMode ? (
                     <BsBrightnessHigh
                       className='text-success'
                       onClick={handleToggle}
+                      aria-label='Toggle Light Mode'
                     />
                   ) : (
-                    <BsFillMoonFill onClick={handleToggle} />
+                    <BsFillMoonFill
+                      onClick={handleToggle}
+                      aria-label='Toggle Dark Mode'
+                    />
                   )}
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../hooks/themeContext';
 import MetaTags from '../components/MetaTags';
+import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
   const { textColorClass } = useContext(ThemeContext);
@@ -16,16 +17,17 @@ const NotFoundPage = () => {
         404: Page Not Found
       </h1>
       <p className='text-center'>
-    We're sorry, but the page you are looking for might have been removed,
-    had its name changed, or is temporarily unavailable.
-  </p>
-    
-    <p className='text-center'>
-    <Link to='/' className='text-success'>
-      Return to Home
-    </Link>
-  </p>
-  </div>
+        We're sorry, but the page you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.
+      </p>
+
+      <p className='text-center'>
+        <Link to='/' className='text-success' aria-label='Return to Home'>
+          Return to Home
+        </Link>
+      </p>
+    </div>
   );
 };
+
 export default NotFoundPage;
