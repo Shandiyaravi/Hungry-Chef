@@ -1,0 +1,19 @@
+
+.footer-container {
+  padding: 15px;
+}
+
+.footer-hr {
+  width: 100%;
+  border-color: #666666;
+}
+
+.footer-team {
+  font-size: larger;
+}
+
+.footer-copyright {
+  font-size: smaller;
+}
+
+  

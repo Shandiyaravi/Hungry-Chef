@@ -1,0 +1,30 @@
+
+
+.m-80 {
+    margin: 80px;
+  }
+  
+  .py-5 {
+    padding-bottom: 5px;
+  }
+  
+  .mt-5 {
+    margin-top: 5px;
+  }
+  
+  .card-container {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    margin: 2px;
+    max-width: 14rem;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  

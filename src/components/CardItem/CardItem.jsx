@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { foodContext } from '../hooks/foodContext';
+import { foodContext } from '../../hooks/foodContext';
 import { Link } from 'react-router-dom';
+import './CardItem.css';
 
 const CardItem = () => {
   const { food } = useContext(foodContext);
@@ -34,7 +35,7 @@ const CardItem = () => {
             key={item.idMeal}
             aria-label={`View recipe for ${item.strMeal}`}
           >
-            <div className='card m-2' style={{ maxWidth: '14rem' }}>
+            <div className='card'>
               <img
                 src={item.strMealThumb}
                 className='card-img-top'

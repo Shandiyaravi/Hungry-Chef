@@ -1,6 +1,7 @@
 import { useContext } from 'react';
-import { foodContext } from '../hooks/foodContext';
+import { foodContext } from '../../hooks/foodContext';
 import { Link } from 'react-router-dom';
+import './MainContent.css';
 
 const MainContent = () => {
   const { food } = useContext(foodContext);

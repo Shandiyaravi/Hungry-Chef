@@ -1,9 +1,9 @@
 import { ThemeContext } from './hooks/themeContext';
 import { useContext, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GDPRBanner from './components/GDPRBanner';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import GDPRBanner from './components/GDPRBanner/GDPRBanner';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Subscribe from './components/Subscribe';
 import HomePage from './pages/HomePage';
 import CookieSettingsPage from './pages/CookieSettingsPage';

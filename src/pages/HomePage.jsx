@@ -1,6 +1,6 @@
 import React from 'react';
 import MetaTags from '../components/MetaTags';
-import MainContent from '../components/MainContent';
+import MainContent from '../components/MainContent/MainContent';
 import foodBackground from '../assets/foodBackground.webp';
 
 const HomePage = () => {

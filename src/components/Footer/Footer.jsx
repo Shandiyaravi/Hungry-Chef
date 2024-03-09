@@ -1,8 +1,7 @@
-// Footer.jsx
-
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../hooks/themeContext';
+import { ThemeContext } from '../../hooks/themeContext';
+import './Footer.css';
 
 const Footer = () => {
   const { bgColorClass } = useContext(ThemeContext);
@@ -10,7 +9,7 @@ const Footer = () => {
   return (
     <footer className={bgColorClass}>
       <div className='container'>
-        <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top'>
+        <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top footer-container'>
           <div className='col mb-3'>
             <h2 className='text-muted'>PRIVACY</h2>
             <ul className='nav flex-column'>
@@ -122,22 +121,17 @@ const Footer = () => {
             </ul>
           </div>
 
-          <hr style={{ width: '100%', borderColor: '#666666' }} />
+          <hr className='footer-hr' />
 
           <div className='d-flex justify-content-between w-100'>
             <div className='col'>
-              <p className='text-body-secondary' style={{ fontSize: 'larger' }}>
-                TEAM 6
-              </p>
+              <p className='text-body-secondary footer-team'>TEAM 6</p>
             </div>
             <div className='col mb-3'>
               <svg className='bi me-2' width='40' height='32'>
                 <use xlinkHref='#bootstrap'></use>
               </svg>
-              <p
-                className='text-body-secondary'
-                style={{ fontSize: 'smaller' }}
-              >
+              <p className='text-body-secondary footer-copyright'>
                 Copyright ©2024 Hungry Chef, Inc or related companies. All
                 rights reserved, including rights for text and data mining and
                 training of artificial technologies or similar technologies.

@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react';
-import CardItem from '../components/CardItem';
+import CardItem from '../components/CardItem/CardItem';
 import { foodContext } from '../hooks/foodContext';
 import MetaTags from '../components/MetaTags';
 
@@ -7,7 +7,6 @@ const RecipeIndexPage = () => {
   const { fetchProduct } = useContext(foodContext);
 
   useEffect(() => {
-    // Fetch all data when the component mounts
     fetchProduct();
   }, [fetchProduct]);
 
