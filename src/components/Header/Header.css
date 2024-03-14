@@ -1,7 +1,7 @@
 
 
 .header {
-  background-color: #343a40; 
+  background-color: coral; 
   color: #ffffff;
 }
 
@@ -36,7 +36,12 @@
 
 @media (max-width: 767px) {
   .navbar-collapse {
-    background-color: #343a40; /* Customize the mobile menu background color */
+    background-color: grey;
+    display:flex;
+    flex-direction: column;
+    gap:0.2rem;
+    
+    padding:0.5rem; /* Customize the mobile menu background color */
   }
 }
 

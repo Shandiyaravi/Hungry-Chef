@@ -1,7 +1,6 @@
 import { Form, Button } from 'react-bootstrap';
 import { Formik } from 'formik';
 import { useContext } from 'react';
-import { ThemeContext } from '../hooks/themeContext';
 import { subscribeContext } from '../hooks/subscribeContext';
 import * as Yup from 'yup';
 
@@ -19,13 +18,12 @@ const validationSchema = Yup.object().shape({
 });
 
 const SubscribeForm = () => {
-  const { bgColorClass, textColorClass } = useContext(ThemeContext);
   const { toggleSubscribe } = useContext(subscribeContext);
 
   return (
     <div
-      className={`container  p-4 ${bgColorClass} shadow`}
-      style={{ width: '20rem' }}
+      className={`container  p-4  shadow`}
+      style={{ width: '20rem', backgroundColor: 'grey' }}
       role='form'
       aria-label='Subscription Form'
     >
@@ -58,10 +56,7 @@ const SubscribeForm = () => {
           isSubmitting,
         }) => (
           <Form onSubmit={handleSubmit} className='mx-auto'>
-            <Form.Group
-              controlId='formName'
-              className={`mb-3 ${textColorClass}`}
-            >
+            <Form.Group controlId='formName' className={`mb-3`}>
               <Form.Label className='text-body-secondary'>Name:</Form.Label>
               <Form.Control
                 type='text'
@@ -81,10 +76,7 @@ const SubscribeForm = () => {
               ) : null}
             </Form.Group>
 
-            <Form.Group
-              controlId='formEmail'
-              className={`mb-3 ${textColorClass}`}
-            >
+            <Form.Group controlId='formEmail' className={`mb-3`}>
               <Form.Label className='text-body-secondary'>Email:</Form.Label>
               <Form.Control
                 type='text'
@@ -104,10 +96,7 @@ const SubscribeForm = () => {
               ) : null}
             </Form.Group>
 
-            <Form.Group
-              controlId='formSubscribe'
-              className={`mb-3 ${textColorClass}`}
-            >
+            <Form.Group controlId='formSubscribe' className={`mb-3 `}>
               <Form.Check
                 type='checkbox'
                 name='subscribe'
@@ -122,7 +111,7 @@ const SubscribeForm = () => {
             </Form.Group>
 
             <Button
-              className={`mx-4 ${textColorClass}`}
+              className={`mx-4 `}
               variant='info'
               type='submit'
               disabled={isSubmitting}
@@ -131,7 +120,7 @@ const SubscribeForm = () => {
               Submit
             </Button>
             <Button
-              className={`mx-4  ${textColorClass}`}
+              className={`mx-4`}
               variant='dark'
               type='close'
               style={{ marginTop: '1em' }}

@@ -1,15 +1,12 @@
 // Header.jsx
 
 import React, { useContext, useState } from 'react';
-import { BsBrightnessHigh, BsFillMoonFill } from 'react-icons/bs';
-import { ThemeContext } from '../../hooks/themeContext';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { subscribeContext } from '../../hooks/subscribeContext';
 import { foodContext } from '../../hooks/foodContext';
 import './Header.css';
 
 const Header = () => {
-  const { darkMode, handleToggle } = useContext(ThemeContext);
   const { setSearchInput } = useContext(foodContext);
   const [foodSearch, setFoodSearch] = useState('');
   const { toggleSubscribe } = useContext(subscribeContext);
@@ -101,20 +98,6 @@ const Header = () => {
                 Search
               </button>
             </form>
-            <div className='d-block px-3'>
-              {darkMode ? (
-                <BsBrightnessHigh
-                  className='text-success'
-                  onClick={handleToggle}
-                  aria-label='Toggle Light Mode'
-                />
-              ) : (
-                <BsFillMoonFill
-                  onClick={handleToggle}
-                  aria-label='Toggle Dark Mode'
-                />
-              )}
-            </div>
           </div>
         </div>
       </nav>

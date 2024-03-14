@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from '../../hooks/themeContext';
+
 import './GDPRBanner.css';
 
 const GDPRBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { bgColorClass } = useContext(ThemeContext);
 
   useEffect(() => {
     const cookiesEnabled = localStorage.getItem('cookiesEnabled');
@@ -32,7 +31,7 @@ const GDPRBanner = () => {
       role='dialog'
       aria-labelledby='gdpr-banner-title'
       aria-describedby='gdpr-banner-description'
-      className={`${'gdprbanner'} ${bgColorClass}`}
+      className={`${'gdprbanner'} `}
     >
       <h2 id='gdpr-banner-title' className='text-muted'>
         Cookie Consent

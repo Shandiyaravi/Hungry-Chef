@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../../hooks/themeContext';
+
 import './Footer.css';
 
 const Footer = () => {
-  const { bgColorClass } = useContext(ThemeContext);
-
   return (
-    <footer className={bgColorClass}>
+    <footer>
       <div className='container'>
         <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top footer-container'>
           <div className='col mb-3'>

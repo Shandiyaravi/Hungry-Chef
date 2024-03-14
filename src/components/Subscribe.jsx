@@ -1,12 +1,11 @@
 import { useContext, useEffect, useRef } from 'react';
-import { ThemeContext } from '../hooks/themeContext';
 
 import { subscribeContext } from '../hooks/subscribeContext';
 import SubscribeForm from './SubscribeForm';
 
 const Subscribe = () => {
   const { isSubscribed, toggleSubscribe } = useContext(subscribeContext);
-  const { bgColorClass, textColorClass } = useContext(ThemeContext);
+
   const subscribeRef = useRef(null);
 
   const subscribeStyle = {
@@ -32,7 +31,7 @@ const Subscribe = () => {
   return (
     <div
       ref={subscribeRef}
-      className={`position-fixed shadow end-0 ${bgColorClass} ${textColorClass}`}
+      className={`position-fixed shadow end-0`}
       style={{ ...subscribeStyle, zIndex: 1050 }}
       role='complementary'
       aria-label='Subscription Form'
