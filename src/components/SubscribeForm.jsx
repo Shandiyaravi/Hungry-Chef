@@ -23,7 +23,7 @@ const SubscribeForm = () => {
   return (
     <div
       className={`container  p-4  shadow`}
-      style={{ width: '20rem', backgroundColor: 'grey' }}
+      style={{ width: '20rem', backgroundColor: 'floralwhite' }}
       role='form'
       aria-label='Subscription Form'
     >

@@ -32,7 +32,7 @@ const Header = () => {
       <nav className='navbar navbar-expand-lg'>
         <div className='container-fluid d-flex justify-content-between align-items-center'>
           <NavLink className='navbar-brand' to='/' aria-label='Go to Home'>
-            <h1 className='display-5 lh-1 mb-3 brand-logo'>Hungry Chef</h1>
+            <h1 className='brand-logo'>Hungry Chef</h1>
           </NavLink>
           <button
             className='navbar-toggler custom-toggler'
